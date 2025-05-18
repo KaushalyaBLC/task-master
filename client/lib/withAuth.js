@@ -4,7 +4,7 @@ import { authOptions } from '@/pages/api/auth/[...nextauth]'
 
 export function withAuth(gssp) {
   return async (context) => {
-    const session = await getServerSession(context.req, context.res, authOptions)
+    const session = await getServerSession(context.req, context.res, authOptions); // Get the session
 
     if (!session) {
       return {

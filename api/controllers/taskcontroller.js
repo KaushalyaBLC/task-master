@@ -44,13 +44,13 @@ const getTasks = async (req, res) => {
       .from('tasks')
       .select('*')
       .eq('user_id', user_id)
-      .order('due_date', { ascending: true }); // Order by due_date in ascending order
+      .order('due_date', { ascending: true }); 
 
-    if (status) {
+    if (status) { //when filtering by status
       query = query.eq('status', status);
     }
 
-    if (dueBefore) {
+    if (dueBefore) { //when filtering by due date
       query = query.lte('due_date', dueBefore);
     }
 
@@ -60,6 +60,7 @@ const getTasks = async (req, res) => {
     }
 
     res.status(200).json(data);
+
   } catch (error) {
     console.error("Error fetching tasks:", error.message);
     return res.status(500).json({ error: error.message });
@@ -68,12 +69,16 @@ const getTasks = async (req, res) => {
 
 // Mark a task as completed 
 const CompleteTask = async (req, res) => {
+
   const user_id = await getUserId(req, res);
   
   if (!user_id) return;
 
-  const { id } = req.params;
-   
+  const { id } = req.params; // Get the task ID from the request parameters
+  if (!id) {
+    return res.status(400).json({ error: "Task ID is required" });
+  }
+  
   const { data, error } = await supabase
     .from("tasks")
     .update({ status: "done" })

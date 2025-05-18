@@ -1,6 +1,7 @@
 const supabase = require("../services/supabaseClient");
 const { getUserId } = require("../utils/userUtils");
 
+//get the summery of pending and done tasks
 const getSummaryReport = async (req, res) => {
   const user_id = await getUserId(req, res);
   if (!user_id) return;
@@ -22,6 +23,7 @@ const getSummaryReport = async (req, res) => {
   res.status(200).json(summary);
 };
 
+//get the tasks for the next 7 days
 const getTasksNext7Days = async (req, res) => {
   const user_id = await getUserId(req, res);
   if (!user_id) return;

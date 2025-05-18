@@ -1,5 +1,6 @@
 const supabase = require("../services/supabaseClient");
 
+//get the user id from the email
 const getUserId = async (req, res) => {
   const { data, error } = await supabase
     .from("users")
