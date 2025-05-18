@@ -7,7 +7,7 @@ export default async function ReportPage() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("https://api-cool-wind-7220.fly.dev/api/tasks/reports", {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}api/tasks/reports`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -25,7 +25,7 @@ export default async function ReportPage() {
   const fetchNext7DaysTasks = async () => {
     try {
       const response = await axios.get(
-        "https://api-cool-wind-7220.fly.dev/api/tasks/reports/next7days",
+        `${process.env.NEXT_PUBLIC_BASE_URL}api/tasks/reports/next7days`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

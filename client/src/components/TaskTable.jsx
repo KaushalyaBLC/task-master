@@ -25,7 +25,7 @@ export default function TasksTable({ tasks }) {
   const handleComplete = async (taskId) => {
     try {
       await axios.put(
-        `https://api-cool-wind-7220.fly.dev/api/tasks/${taskId}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}api/tasks/${taskId}`,
         { status: 'done' },
         {
           headers: {
