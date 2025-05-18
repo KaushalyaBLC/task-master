@@ -27,7 +27,7 @@ export default function AddTaskForm() {
 
       // Make the API request with the Bearer token in the Authorization header
       axios
-        .post('http://localhost:5000/api/tasks',formData, {
+        .post('https://api-cool-wind-7220.fly.dev/api/tasks',formData, {
           headers: {
             Authorization: `Bearer ${accessToken}`
           },
