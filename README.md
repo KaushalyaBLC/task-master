@@ -5,6 +5,15 @@
 **TaskMaster** is a full-stack task management application designed to streamline workflows and boost productivity. It provides features such as task creation, filtering, reporting, and authentication. The project is built using modern web technologies, including **Next.js** for the frontend and **Express.js** for the backend, with **Supabase** as the database  provider.
 
 ---
+## 📽️ Demo Video
+
+Watch a quick walkthrough of TaskMaster's features and functionality:
+
+👉 [Watch on YouTube](https://www.youtube.com/watch?v=RKPQYiE3-f8)
+
+> _This demo showcases task creation, filtering, Google authentication, dark mode toggle, and the reports dashboard in action._
+
+---
 
 ## Features
 
