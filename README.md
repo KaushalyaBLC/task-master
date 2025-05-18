@@ -104,7 +104,7 @@ GOOGLE_CLIENT_ID=<your_google_client_id>
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository_url>
+   git clone [<repository_url>](https://github.com/KaushalyaBLC/task-master.git)
    cd TaskMaster
    ```
 2. **Install dependencies for both frontend and backend:**
