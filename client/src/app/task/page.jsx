@@ -37,7 +37,7 @@ async function TasksPage({ searchParams = {} }) {
 
 async function fetchTasks({ status, dueBefore, accessToken }) {
   try {
-    const response = await axios.get("http://localhost:5000/api/tasks", {
+    const response = await axios.get("https://api-cool-wind-7220.fly.dev/api/tasks", {
       params: { status, dueBefore },
       headers: {
         Authorization: `Bearer ${accessToken}`,
